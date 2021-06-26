@@ -16,7 +16,7 @@ const TopPage = () => {
   console.log(globalState)
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'warp' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       {
         globalState.user_data.map((user, index) => {
           return (
