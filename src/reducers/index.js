@@ -1,4 +1,4 @@
-import { GET_DATA } from '../actions/index'
+import { GET_DATA,GET_DATA_SECOND } from '../actions/index'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -11,6 +11,7 @@ const reducer = (state, action) => {
       console.log(action.data)
       console.log(state.user_data)
       return { ...state, user_data: result }
+    
     default:
       return state
   }
