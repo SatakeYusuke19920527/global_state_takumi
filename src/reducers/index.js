@@ -1,4 +1,4 @@
-import { GET_DATA,GET_DATA_SECOND } from '../actions/index'
+import {GET_DATA, GET_TODODATA} from '../actions/index'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -11,6 +11,12 @@ const reducer = (state, action) => {
       console.log(action.data)
       console.log(state.user_data)
       return { ...state, user_data: result }
+    
+    case GET_TODODATA:
+      console.log(action.data)
+      const resulttwo = action.data.filter(comment => comment.id = comment.id * 2 - 1 )
+      return { ...state, comment_data: resulttwo }
+    
     
     default:
       return state

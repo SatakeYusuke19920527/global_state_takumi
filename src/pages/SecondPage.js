@@ -1,18 +1,18 @@
 import React,{ useEffect, useContext } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 import { AppBar, Toolbar } from '@material-ui/core'
-import { fetchGetData } from '../apis/index'
+import { fetchGetData,fetchGetTodoData } from '../apis/index'
 import { Store } from '../store/index'
-import { GET_DATA,GET_DATA_SECOND } from '../actions/index'
-import Card from '../components/Card'
-
+import { GET_DATA,GET_TODODATA } from '../actions/index'
+import Card from '../components/SecondCard'
+import SecondCard from '../components/SecondCard'
 
 const SecondPage = () => {
 const { globalState, setGlobalState } = useContext(Store)
   useEffect(() => {
-    fetchGetData().then(res => {
+    fetchGetTodoData().then(res => {
         setGlobalState({
-          type: GET_DATA,
+          type: GET_TODODATA,
           data: res.data
       })
     })
@@ -22,9 +22,9 @@ const { globalState, setGlobalState } = useContext(Store)
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       {
-        globalState.user_data.map((user, index) => {
+        globalState.comment_data.map((comment, index) => {
           return (
-            <Card user ={user} key={index} />
+            <SecondCard comment={comment} key={index} />
           )
         })
       }

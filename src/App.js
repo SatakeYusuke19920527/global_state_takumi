@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import TopPage from './pages/TopPage'
 import Header from './components/Header'
-import SecondPage from './components/SecondPage';
+import SecondPage from './pages/SecondPage';
 function App() {
   return (
     <Router>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { AppBar, Toolbar } from '@material-ui/core'
 import { Link, Route, Switch } from 'react-router-dom'
-import SecondPage from "./SecondPage"
+import SecondPage from "../pages/SecondPage"
 
 
 
